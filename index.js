@@ -8,10 +8,12 @@ const expresslayouts=require('express-ejs-layouts');
 //for static files css,js
 app.use(express.static('./assets'));
 
-
 //layout need to put before route
 app.use(expresslayouts);
 
+//extract style and script from sub pages into the layout
+app.set('layout extractstyle',true);
+app.set('layout extractscript',true);
 
 //use express router
 app.use('/', require('./routers'));
