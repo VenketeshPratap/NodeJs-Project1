@@ -4,6 +4,7 @@ const router = require('./routers');
 const app=express();
 const port=8000;
 const expresslayouts=require('express-ejs-layouts');
+const db=require('./config/mongoose');
 
 //for static files css,js
 app.use(express.static('./assets'));
@@ -12,8 +13,8 @@ app.use(express.static('./assets'));
 app.use(expresslayouts);
 
 //extract style and script from sub pages into the layout
-app.set('layout extractstyle',true);
-app.set('layout extractscript',true);
+// app.set('layout extractstyle',true);  giving error
+// app.set('layout extractscript',true);
 
 //use express router
 app.use('/', require('./routers'));
