@@ -3,6 +3,14 @@ const router = require('./routers');
 
 const app=express();
 const port=8000;
+const expresslayouts=require('express-ejs-layouts');
+
+//for static files css,js
+app.use(express.static('./assets'));
+
+
+//layout need to put before route
+app.use(expresslayouts);
 
 
 //use express router
