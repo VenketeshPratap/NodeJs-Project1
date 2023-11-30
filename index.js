@@ -8,7 +8,6 @@ const router = require('./routers');
 const db = require('./config/mongoose');// requring DataBase
 
 
-
 app.use(express.urlencoded());
 
 app.use(cookieParser());
